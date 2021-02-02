@@ -1,6 +1,6 @@
 # Chat creator
 
-A single page webapp to generate mock chats. Useful for creating chats in different languages for polyglots that want to learn multiple languages. 
+A single page webapp to generate mock chats. Useful for designing chats for polyglots that want to learn multiple spoken languages. 
 
 ## Technologies used
 - Angular
