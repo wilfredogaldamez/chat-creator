@@ -5,7 +5,7 @@ A single page webapp to generate mock chats. Useful for creating chats in differ
 ## Technologies used
 - Angular
 - Express
-- MongoDB 
+- MongoDB   
 - Bulma CSS Framework
 - SASS
 

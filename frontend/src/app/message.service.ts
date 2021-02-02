@@ -11,6 +11,6 @@ export class MessageService {
 
   createChat(title: string){
     //we want to send a web request to create a chat
-    this.webReqService.post('chat', { title });
+    return this.webReqService.post('chats', { title });
   }
 }
