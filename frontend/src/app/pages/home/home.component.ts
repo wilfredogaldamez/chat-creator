@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   createNewChat() {
     this.chatService.createChat('testing').subscribe((response: any) => {
       console.log(response);
+      console.log(response["_id"]);
     })
   }
 
