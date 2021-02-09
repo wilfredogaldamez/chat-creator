@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'src/app/message.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { MessageService } from 'src/app/message.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private chatService: MessageService) { }
+  constructor(private chatService: MessageService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
     this.chatService.createChat('testing').subscribe((response: any) => {
       console.log(response);
       console.log(response["_id"]);
+      this.router.navigate(['/chat', response["_id"]]);
     })
   }
 
