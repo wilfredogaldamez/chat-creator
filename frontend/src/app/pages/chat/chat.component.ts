@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'src/app/message.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Chat } from 'src/app/models/chat.model';
+import { Message } from 'src/app/models/message.model';
 
 @Component({
   selector: 'app-chat',
@@ -8,9 +11,29 @@ import { MessageService } from 'src/app/message.service';
 })
 export class ChatComponent implements OnInit {
 
-  constructor(private chatService: MessageService) { }
+  constructor(private chatService: MessageService, private route: ActivatedRoute, private router: Router) { }
 
-  ngOnInit(): void {
+  chatId?: string;
+  chats?: Chat[];
+  messages?: Message[];
+
+
+  ngOnInit() {
+    this.route.params.subscribe(
+      (params: Params) => {
+        if (params.chatId) {
+          console.log("params listed")
+          this.chatId = params.chatId;
+          this.chatService.getMessages(params.chatId).subscribe((messages: any) => {
+            this.messages = messages;
+            console.log(this.messages)
+          })
+        } else {
+          this.messages = undefined;
+        }
+      }
+    )
+    
   }
 
   addMessageToChat() {

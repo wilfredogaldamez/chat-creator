@@ -50,7 +50,7 @@ app.post('/chats', (req, res) => {
  * GET /chat/:chatId/messages
  * Purpose: get all chats
 */
-app.get('/chats/:chatId/messages', (req, res) => {
+app.get('/chats/:chatId/', (req, res) => {
     //we want to return all messages that belong to a specific chat
     Message.find({
         _chatId: req.params.chatId
