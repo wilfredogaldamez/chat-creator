@@ -7,12 +7,11 @@
             <a class="list-menu-item-left has-background-light">
                 <p>Hey Bob</p>
             </a>
-            <a class="list-menu-item-left has-background-light">
-                <p>How's it going?</p>
+            <a class="list-menu-item-right has-background-light" *ngFor="let message of messages">
+                <p>{{ message.title }}</p>
             </a>
-            <a class="list-menu-item-right has-background-light">
-                <p>Pretty good, what's up with you! how's the new job?</p>
-            </a><br><br>
+            
+            <br><br>
             <input #taskTitleInput class="input has-background-light is-medium" type="text"
                 placeholder="Enter message...">
             <br>
