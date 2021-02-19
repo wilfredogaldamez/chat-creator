@@ -12,6 +12,10 @@ const MessageSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         required: true
     },
+    _leftside: {
+        type: Boolean,
+        default: true
+    },
 
 })
 

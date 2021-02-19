@@ -65,11 +65,12 @@ app.get('/chats/:chatId/', (req, res) => {
  * POST /chat/:chatId/messages
  * Purpose: create a new message in a specific chat
 */
-app.post('/chats/:chatId/messages', (req, res) => {
+app.post('/chats/:chatId/', (req, res) => {
     //we want to create a new chat and return the new  chat document to the user (which includes the id)
     let newMessage = new Message({
         title: req.body.title,
-        _chatId: req.params.chatId
+        _chatId: req.params.chatId,
+        _leftside: req.params.leftside
     });
     newMessage.save().then((newMessageDoc) => {
         //full chat document returned

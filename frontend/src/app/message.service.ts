@@ -18,4 +18,10 @@ export class MessageService {
     return this.webReqService.get(`chats/${chatId}/`);
   }
 
+  createMessage(title: string, chatId: string, leftside: boolean) {
+    // We want to send a web request to create a message
+    return this.webReqService.post(`chats/${chatId}/`, { title, leftside });
+  }
+
+
 }
