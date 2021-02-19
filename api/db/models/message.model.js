@@ -14,7 +14,7 @@ const MessageSchema = new mongoose.Schema({
     },
     _leftside: {
         type: Boolean,
-        default: true
+        default: false
     },
 
 })
