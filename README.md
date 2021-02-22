@@ -19,5 +19,12 @@ Don't forget to run the api server and angular server to view and develop.
 - (Completed) Adding a second button to be able to distinguish which person in the chat to assign the text to
 - (Completed) Add field to mongoose model to differentiate between alice and bob (messages floating to left or floating to right)
 - (Completed) Create component function to add messages from input/textarea to database
-- Use directives to display the messages on the correct side when viewing (Alice messages on left, Bob messages on right)
-- Split addMessage component function to 2 separate functions. One adds Alicess', other adds Bob's messages
+- (Completed) Use directives to display the messages on the correct side when viewing (Alice messages on left, Bob messages on right)
+- (Completed) Split addMessage component function to 2 separate functions. One adds Alicess', other adds Bob's messages
+
+## Possible Features and Improvements
+- Account registration to allow saving chats
+- Better layout / design
+- Ability to update names of Alice and Bob
+- Ability to update and delete individual messages
+
