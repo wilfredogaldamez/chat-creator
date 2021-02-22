@@ -45,7 +45,7 @@ export class ChatComponent implements OnInit {
 
 
 
-  createMessage(title: string) {
+  createLeftMessage(title: string) {
     if (typeof this.chatId === "string") {
       this.chatService.createMessage(title, this.chatId, true).subscribe((newMessage: any) => {
         console.log("added message to chat");
@@ -53,5 +53,18 @@ export class ChatComponent implements OnInit {
       })
   }
   }
+
+
+
+  createRightMessage(title: string) {
+    if (typeof this.chatId === "string") {
+      this.chatService.createMessage(title, this.chatId, false).subscribe((newMessage: any) => {
+        console.log("added message to chat");
+        this.ngOnInit();
+      })
+  }
+  }
+
+
 
 }

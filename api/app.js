@@ -70,8 +70,9 @@ app.post('/chats/:chatId/', (req, res) => {
     let newMessage = new Message({
         title: req.body.title,
         _chatId: req.params.chatId,
-        _leftside: req.params.leftside
+        _leftside: req.body.leftside,
     });
+    console.log(req.body.leftside);
     newMessage.save().then((newMessageDoc) => {
         //full chat document returned
         res.send(newMessageDoc);
